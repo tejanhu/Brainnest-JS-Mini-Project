@@ -22,57 +22,57 @@ function playerPlay(){
 function playRound(player_selection, pc_selection){
     var msg = "";
 
-    if(pc_selection === ("Paper") && player_selection === ("Rock")){
+    if(pc_selection === ("Paper") && player_selection.toLowerCase() === ("Rock").toLowerCase() && player_selection.toUpperCase() === ("Rock").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         pc_score+=10;
         msg = "You lost this round! Paper beats Rock!";
     }
-    else if(pc_selection === ("Rock") && player_selection === ("Paper")){
+    else if(pc_selection === ("Rock") && player_selection.toLowerCase() === ("Paper").toLowerCase() && player_selection.toUpperCase() === ("Paper").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
         msg = "You won this round! Paper beats Rock!";
     }
-    else if(pc_selection === ("Scissors") && player_selection === ("Paper")){
+    else if(pc_selection === ("Scissors") && player_selection.toLowerCase() === ("Paper").toLowerCase() && player_selection.toUpperCase() === ("Paper").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         pc_score+=10;
         msg = "You lost this round! Scissors beats Paper!";
     }
-    else if(pc_selection === ("Paper") && player_selection === ("Scissors")){
+    else if(pc_selection === ("Paper") && player_selection.toLowerCase() === ("Scissors").toLowerCase() && player_selection.toUpperCase() === ("Scissors").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
         msg = "You won this round! Scissors beats Paper!";
     }
-    else if(pc_selection === ("Rock") && player_selection === ("Scissors")){
+    else if(pc_selection === ("Rock") && player_selection.toLowerCase() === ("Scissors").toLowerCase() && player_selection.toUpperCase() === ("Scissors").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         pc_score+=10;
         msg = "You lost this round! Rock beats Scissors!";
     }
-    else if(pc_selection === ("Scissors") && player_selection === ("Rock")){
+    else if(pc_selection === ("Scissors") && player_selection.toLowerCase() === ("Rock").toLowerCase() && player_selection.toUpperCase() === ("Rock").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
         msg = "You won this round! Rock beats Scissors!";
     }
-    else if(pc_selection === ("Rock") && player_selection === ("Rock")){
+    else if(pc_selection === ("Rock") && player_selection.toLowerCase() === ("Rock").toLowerCase() && player_selection.toUpperCase() === ("Rock").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
         pc_score+=10;
         msg = "It's a tie this round! You both have a Rock!";
     }
-    else if(pc_selection === ("Scissors") && player_selection === ("Scissors")){
+    else if(pc_selection === ("Scissors") && player_selection.toLowerCase() === ("Scissors").toLowerCase() && player_selection.toUpperCase() === ("Scissors").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
         pc_score+=10;
         msg = "It's a tie this round! You both have Scissors!";
     }
-    else if(pc_selection === ("Paper") && player_selection === ("Paper")){
+    else if(pc_selection === ("Paper") && player_selection.toLowerCase() === ("Paper").toLowerCase() && player_selection.toUpperCase() === ("Paper").toUpperCase()){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + pc_selection);
         player_score+=10;
