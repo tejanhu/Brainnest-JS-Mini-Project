@@ -67,12 +67,12 @@ function playRound(player_selection, computer_selection){
         computer_score+=10;
         msg = "It's a tie this round! You both have Scissors!";
     }
-    else if(computer_selection === ("Paper") && player_selection.toLowerCase() === ("Paper").toLowerCase() && player_selection.toUpperCase() === ("Paper").toUpperCase()){
+    else if(computer_selection === player_selection){
         console.log("You chose: " + player_selection);
         console.log("The PC chose: " + computer_selection);
         player_score+=10;
-        computer_score+=10;
-        msg = "It's a tie this round! You both have Paper!";
+        pc_score+=10;
+        msg = `It's a tie this round! You both have a ${playerPlay}!`;
     }
     return msg;
 }
