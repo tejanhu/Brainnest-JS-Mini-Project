@@ -1,5 +1,3 @@
-var computer_selection = computerPlay();
-var player_selection = " ";
 var player_score = 0;
 var computer_score = 0;
 var tools = ["rock", "paper", "scissors"];
@@ -8,15 +6,27 @@ let msg = "";
 function computerPlay(){
     randomise_tools = tools[Math.floor(Math.random()*(tools.length))];
     console.log("The Computer chose to play: " + randomise_tools);
-    return computer_selection = randomise_tools;
+    return randomise_tools;
 }
 
 function playerPlay(){
-   return player_selection = prompt("What would you like to play with?");  
+    let player_selection; 
+    
+    do{
+        player_selection = prompt("What would you like to play with?").toLowerCase();
+        console.log(player_selection);
+        if(!tools.includes(player_selection)){
+            console.log("You have entered an invalid input!");
+            console.log("Please enter one of the following: " + "'Rock' or 'Paper' or 'Scissors'!");
+        }
+    }
+    while(!tools.includes(player_selection)); 
+
+    return player_selection;  
 }
 
-function playRound(player_selection, computer_selection){
-    var msg = "";
+function playRound(playerPlay, computerPlay){
+    
 
     if(playerPlay == computerPlay)
     {
@@ -50,7 +60,6 @@ function game(){
     for(let round = 1; round <= 5; round++){ 
         console.log("Round "+ round + ": ");
         console.log(playRound(playerPlay(), computerPlay()));
-        
         if(msg.startsWith("You lost this round!")){
             computer_score+=10;
             console.log("PC SCORE: " + computer_score); 
