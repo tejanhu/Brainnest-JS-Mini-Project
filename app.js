@@ -1,7 +1,7 @@
 var player_score = 0;
 var computer_score = 0;
 var tools = ["rock", "paper", "scissors"];
-let result = "";
+let msg = "";
 
 function computerPlay(){
     randomise_tools = tools[Math.floor(Math.random()*(tools.length))];
@@ -32,7 +32,7 @@ function playRound(playerPlay, computerPlay){
     {
         console.log("You chose: " + playerPlay);
         console.log("The PC chose: " + computerPlay);
-        result = `It's a tie this round! You both have a ${playerPlay}!`;
+        msg = `It's a tie this round! You both have a ${playerPlay}!`;
     }
     
     else if(
@@ -43,36 +43,48 @@ function playRound(playerPlay, computerPlay){
     {
             console.log("You chose: " + playerPlay);
             console.log("The PC chose: " + computerPlay);
-            result = `You lost this round! ${computerPlay} beats ${playerPlay}!`;
+            msg = `You lost this round! ${computerPlay} beats ${playerPlay}!`;
     }
 
     else
     {
         console.log("You chose: " + playerPlay);
         console.log("The PC chose: " + computerPlay);
-        result = `You won this round! ${playerPlay} beats ${computerPlay}!`;
+        msg = `You won this round! ${playerPlay} beats ${computerPlay}!`;
     }
 
-    return result;
+    return msg;
 }
 
 function game(){
     for(let round = 1; round <= 5; round++){ 
         console.log("Round "+ round + ": ");
         console.log(playRound(playerPlay(), computerPlay()));
+        if(msg.startsWith("You lost this round!")){
+            computer_score+=10;
+            console.log("PC SCORE: " + computer_score); 
+            console.log("PLAYER SCORE: " + player_score); 
+        } 
+        else if(msg.startsWith("You won this round!")){
+            player_score+=10;
+            console.log("PC SCORE: " + computer_score); 
+            console.log("PLAYER SCORE: " + player_score); 
+        }
+        else {
+            player_score+=10;
+            computer_score+=10;
+            console.log("PC SCORE: " + computer_score); 
+            console.log("PLAYER SCORE: " + player_score); 
+        }
     }
 
-    if(result.startsWith("You lost this round!")){
-            computer_score+=10;
+    if(computer_score > player_score){
             console.log("The winner is The PC!");
     } 
-    else if(result.startsWith("You won this round!")){
-            player_score+=10;
+    else if(player_score > computer_score){
             console.log("You're the winner!");
     }
     else {
-            player_score+=10;
-            computer_score+=10;
             console.log("You both are winners!");
     }
 
